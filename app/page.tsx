@@ -28,7 +28,7 @@ const testimonials: readonly Testimonial[] = [
       "Finally, he lead our most complex features, including a customized timeline graph that required him to manually create the graph with svg. In parting, he left us with tremendous insight on how we can further improve our code quality, reduce load times, and avoid bugs.I am forever grateful I had Dawson as a mentor in starting my engineering career and hope to work with him again in the future. I highly recommend working with Dawson to lead the development of your React app.",
     ],
     attribution: "Tyler Allen, Software Engineer at Unit21",
-    companyLink: "https://linkedin.com",
+    companyLink: "https://www.linkedin.com/in/tylertallen/",
   },
   {
     name: "Aether Bio",
@@ -42,7 +42,7 @@ const testimonials: readonly Testimonial[] = [
       "Dawson was a joy to work with - incredibly responsive, detail oriented, and technically skilled. He went above and beyond for the project we worked on together, and I am very much looking forward to working with him again in the future!",
     ],
     attribution: "Hannah Meyers, CoFounder of Aether Bio",
-    companyLink: "https://linkedin.com",
+    companyLink: "https://www.linkedin.com/in/hannah-meyers/",
   },
   {
     name: "Aero",
@@ -58,7 +58,7 @@ const testimonials: readonly Testimonial[] = [
       "His code was thoughtful and sustainable even though he was working on tight deadlines.",
     ],
     attribution: "Ben Williams, Software Engineer at Aero",
-    companyLink: "https://linkedin.com",
+    companyLink: "https://www.linkedin.com/in/biw/",
   },
 ];
 
