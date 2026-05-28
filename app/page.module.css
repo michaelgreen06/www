@@ -1,0 +1,162 @@
+.page {
+  min-height: 100vh;
+  padding: 3rem 1.5rem 4rem;
+  background:
+    radial-gradient(circle at top, rgba(235, 19, 104, 0.18), transparent 28%),
+    linear-gradient(180deg, #f5f1e7 0%, #efe7d8 100%);
+}
+
+.shell {
+  width: min(980px, 100%);
+  margin: 0 auto;
+}
+
+.githubCorner {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  color: #ffffff;
+}
+
+.githubCorner svg {
+  fill: #151513;
+}
+
+.octoArm {
+  transform-box: fill-box;
+}
+
+.githubCorner:hover .octoArm {
+  animation: wave 560ms ease-in-out;
+}
+
+.hero {
+  margin-top: 2rem;
+}
+
+.title {
+  margin-bottom: 1rem;
+  font-size: clamp(2.6rem, 9vw, 5.4rem);
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+}
+
+.eyebrow {
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.1rem, 3vw, 1.7rem);
+}
+
+.highlight {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #eb1368;
+  color: #fff8ef;
+}
+
+.subHeader {
+  max-width: 48rem;
+  margin-bottom: 3rem;
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  line-height: 1.5;
+}
+
+.logoWrap {
+  display: grid;
+  place-items: center;
+  margin-bottom: 4rem;
+}
+
+.logo {
+  width: min(100%, 700px);
+  height: auto;
+}
+
+.section {
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  margin-bottom: 2rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.client {
+  margin-bottom: 3rem;
+}
+
+.clientLogo {
+  margin-bottom: 1.25rem;
+}
+
+.quote {
+  max-width: 54rem;
+  font-size: clamp(1rem, 2.3vw, 1.35rem);
+  line-height: 1.8;
+}
+
+.quote p + p {
+  margin-top: 1.5rem;
+}
+
+.quote a {
+  text-decoration: underline;
+}
+
+.outreach {
+  margin: 4rem 0 1rem;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+}
+
+.cta a {
+  text-decoration: none;
+}
+
+.ethWrap {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.ethLogo {
+  width: min(100%, 540px);
+  height: auto;
+  margin: 0 auto 1rem;
+}
+
+.credit {
+  font-size: 0.9rem;
+}
+
+.footer {
+  padding-top: 2rem;
+  font-size: 0.95rem;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+@media (max-width: 700px) {
+  .page {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .githubCorner:hover .octoArm {
+    animation: none;
+  }
+
+  .githubCorner .octoArm {
+    animation: wave 560ms ease-in-out;
+  }
+}
