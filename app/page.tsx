@@ -79,17 +79,6 @@ export default function HomePage() {
           </p>
         </section>
 
-        <div className={styles.logoWrap}>
-          <Image
-            src="/images/logo@2x.png"
-            alt="Lost in the Sauce logo"
-            width={700}
-            height={700}
-            priority
-            className={styles.logo}
-          />
-        </div>
-
         <section className={styles.section}>
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Client Results</h2>

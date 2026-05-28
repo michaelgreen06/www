@@ -45,20 +45,9 @@
 
 .subHeader {
   max-width: 48rem;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   font-size: clamp(1rem, 2.5vw, 1.35rem);
   line-height: 1.5;
-}
-
-.logoWrap {
-  display: grid;
-  place-items: center;
-  margin-bottom: 4rem;
-}
-
-.logo {
-  width: min(100%, 700px);
-  height: auto;
 }
 
 .section {
@@ -84,7 +73,7 @@
   display: grid;
   grid-template-columns: minmax(140px, 220px) minmax(0, 1fr);
   gap: 1.5rem 2rem;
-  align-items: start;
+  align-items: center;
   margin-bottom: 1.5rem;
   padding: 1.5rem;
   border: 1px solid rgba(17, 17, 17, 0.08);
@@ -97,8 +86,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  max-width: 100%;
   min-height: 120px;
-  padding: 1rem;
+  padding: 0.85rem 1rem;
   border-radius: 1.25rem;
   background: #ffffff;
   transition:
@@ -116,6 +107,9 @@
 }
 
 .clientLogo {
+  width: auto;
+  height: auto;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -193,6 +187,6 @@
   }
 
   .logoLink {
-    width: 100%;
+    width: fit-content;
   }
 }
