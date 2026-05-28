@@ -4,7 +4,7 @@
   <b>www</b>
 </p>
 
-Next.js App Router + TypeScript version of the Dark Triangle landing page.
+Next.js App Router + TypeScript version of the Lost in the Sauce landing page.
 
 Scripts:
 
