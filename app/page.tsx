@@ -67,7 +67,9 @@ export default function HomePage() {
     <main className={styles.page}>
       <div className={styles.shell}>
         <section className={styles.hero}>
-          <p className={styles.kicker}>Modern web development for ambitious teams</p>
+          <p className={styles.kicker}>
+            Modern web development for ambitious teams
+          </p>
           <h1 className={styles.title}>Lost in the Sauce</h1>
           <p className={styles.eyebrow}>
             We design and build fast, modern websites and web applications that
@@ -107,25 +109,33 @@ export default function HomePage() {
               </a>
 
               <div className={styles.testimonialBody}>
-                <p className={styles.quoteHighlight}>&ldquo;{testimonial.highlight}&rdquo;</p>
+                <p className={styles.quoteHighlight}>
+                  &ldquo;{testimonial.highlight}&rdquo;
+                </p>
 
                 <details className={styles.quoteDetails}>
-                  <summary className={styles.quoteToggle}>Read full testimonial</summary>
+                  <summary className={styles.quoteToggle}>
+                    Read full testimonial
+                  </summary>
                   <blockquote className={styles.quote}>
                     {testimonial.quote.map((paragraph, index) => (
                       <p key={`${testimonial.name}-${index}`}>{paragraph}</p>
                     ))}
-                    <footer className={styles.attribution}>{testimonial.attribution}</footer>
+                    <footer className={styles.attribution}>
+                      {testimonial.attribution}
+                    </footer>
                   </blockquote>
                 </details>
               </div>
             </article>
           ))}
 
-          <p className={styles.outreach}>Let&apos;s make your next release feel inevitable.</p>
+          <p className={styles.outreach}>
+            Let&apos;s make your next release feel inevitable.
+          </p>
           <p className={styles.cta}>
             <a
-              href="https://dawsbot.com#email-form"
+              href="https://dawsbot.com/#contact"
               className={styles.highlight}
               target="_blank"
               rel="noreferrer"
@@ -135,7 +145,9 @@ export default function HomePage() {
           </p>
         </section>
 
-        <footer className={styles.footer}>Copyright {new Date().getFullYear()}</footer>
+        <footer className={styles.footer}>
+          Copyright {new Date().getFullYear()}
+        </footer>
       </div>
     </main>
   );
