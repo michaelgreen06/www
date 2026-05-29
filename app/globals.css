@@ -12,16 +12,11 @@ body {
   background: #f7f3ea;
   color: #111111;
   font-family:
-    "Anonymous Pro",
-    ui-monospace,
-    "SFMono-Regular",
-    "SF Mono",
-    Menlo,
-    Monaco,
-    Consolas,
-    "Liberation Mono",
-    "Courier New",
-    monospace;
+    "Gill Sans",
+    Optima,
+    "Avenir Next",
+    sans-serif;
+  text-rendering: optimizeLegibility;
 }
 
 a {

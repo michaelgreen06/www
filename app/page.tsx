@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { ReactElement } from "react";
 import styles from "./page.module.css";
 
 type Testimonial = {
@@ -12,6 +13,121 @@ type Testimonial = {
   attribution: string;
   companyLink: string;
 };
+
+type Outcome = {
+  metric: string;
+  label: string;
+  detail: string;
+};
+
+type Capability = {
+  eyebrow: string;
+  title: string;
+  copy: string;
+};
+
+type ProcessStep = {
+  number: string;
+  title: string;
+  copy: string;
+};
+
+type TrustSignal = {
+  title: string;
+  copy: string;
+};
+
+const outcomes: readonly Outcome[] = [
+  {
+    metric: "24/7",
+    label: "Revenue window",
+    detail: "Sell products and capture leads even when the physical store is closed.",
+  },
+  {
+    metric: "SEO + GEO",
+    label: "Modern discovery",
+    detail:
+      "Show up in search engines and in AI-generated answers where customers now start research.",
+  },
+  {
+    metric: "Fast",
+    label: "Better first impression",
+    detail:
+      "Load quickly, work cleanly on mobile, and feel professional before anyone talks to you.",
+  },
+];
+
+const capabilities: readonly Capability[] = [
+  {
+    eyebrow: "01",
+    title: "Current-era websites",
+    copy:
+      "We turn outdated pages into sharp, credible experiences that make your business feel active, trustworthy, and worth contacting.",
+  },
+  {
+    eyebrow: "02",
+    title: "Performance and accessibility",
+    copy:
+      "Fast pages, clear navigation, readable content, and mobile-first layouts help more visitors become customers.",
+  },
+  {
+    eyebrow: "03",
+    title: "SEO and generative engine optimization",
+    copy:
+      "We structure content so Google, Bing, ChatGPT, Perplexity, and other answer engines can understand what you sell and who you serve.",
+  },
+  {
+    eyebrow: "04",
+    title: "Online inventory and commerce",
+    copy:
+      "List products, take orders, book appointments, and keep the sales pipeline moving from anywhere.",
+  },
+];
+
+const processSteps: readonly ProcessStep[] = [
+  {
+    number: "01",
+    title: "Audit what is costing you customers",
+    copy:
+      "We review your current site, search visibility, mobile experience, speed, content, and conversion paths.",
+  },
+  {
+    number: "02",
+    title: "Plan the page that sells",
+    copy:
+      "We map offers, calls to action, inventory, booking flows, and the content customers need before they buy.",
+  },
+  {
+    number: "03",
+    title: "Build fast and polish hard",
+    copy:
+      "We design, develop, test, and refine the site so it feels modern, loads quickly, and is easy to update.",
+  },
+  {
+    number: "04",
+    title: "Launch with a growth foundation",
+    copy:
+      "We ship with analytics, technical SEO basics, structured content, and a clear next-step roadmap.",
+  },
+];
+
+const trustSignals: readonly TrustSignal[] = [
+  {
+    title: "Senior engineering standards",
+    copy:
+      "Typed code, maintainable systems, accessibility-minded markup, and practical architecture instead of fragile page-builder sludge.",
+  },
+  {
+    title: "Business-first decisions",
+    copy:
+      "Every section earns its place by helping customers understand, trust, book, buy, or contact you.",
+  },
+  {
+    title: "Modern search readiness",
+    copy:
+      "We write and structure pages for human readers, classic search crawlers, and AI answer engines.",
+  },
+];
 
 const testimonials: readonly Testimonial[] = [
   {
@@ -62,26 +178,154 @@ const testimonials: readonly Testimonial[] = [
   },
 ];
 
-export default function HomePage() {
+export default function HomePage(): ReactElement {
   return (
     <main className={styles.page}>
       <div className={styles.shell}>
+        <header className={styles.siteHeader}>
+          <a href="#top" className={styles.brand}>
+            Lost in the Sauce
+          </a>
+          <nav className={styles.nav} aria-label="Primary navigation">
+            <a href="#services">Services</a>
+            <a href="#process">Process</a>
+            <a href="#proof">Proof</a>
+            <a href="#contact">Book a call</a>
+          </nav>
+        </header>
+
         <section className={styles.hero}>
-          <p className={styles.kicker}>
-            Modern web development for ambitious teams
-          </p>
-          <h1 className={styles.title}>Lost in the Sauce</h1>
-          <p className={styles.eyebrow}>
-            We design and build fast, modern websites and web applications that
-            are easy to use, easy to maintain, and ready to grow.
-          </p>
-          <p className={`${styles.subHeader} ${styles.highlight}`}>
-            Strategy, product-minded engineering, frontend systems, performance,
-            accessibility, and polished launch-ready execution.
-          </p>
+          <div className={styles.heroCopy}>
+            <p className={styles.kicker}>Modern web development agency</p>
+            <h1 className={styles.title}>
+              Bring your business into the current era.
+            </h1>
+            <p className={styles.eyebrow}>
+              We design and build fast, polished websites that help customers
+              find you, trust you, book you, and buy from you.
+            </p>
+            <div className={styles.heroActions}>
+              <a
+                href="https://dawsbot.com/#contact"
+                className={styles.primaryButton}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Book a free intro call
+              </a>
+              <a href="#services" className={styles.secondaryButton}>
+                See what we build
+              </a>
+            </div>
+          </div>
+
+          <aside className={styles.heroPanel} aria-label="Agency focus areas">
+            <p className={styles.panelLabel}>What gets better</p>
+            <ul className={styles.checkList}>
+              <li>More customers discover you</li>
+              <li>More visitors become leads</li>
+              <li>Sales and bookings happen after hours</li>
+              <li>Your brand looks legit before the first call</li>
+            </ul>
+          </aside>
         </section>
 
-        <section className={styles.section}>
+        <section className={styles.outcomeGrid} aria-label="Customer outcomes">
+          {outcomes.map((outcome) => (
+            <article key={outcome.label} className={styles.outcomeCard}>
+              <p className={styles.outcomeMetric}>{outcome.metric}</p>
+              <h2 className={styles.outcomeLabel}>{outcome.label}</h2>
+              <p className={styles.outcomeDetail}>{outcome.detail}</p>
+            </article>
+          ))}
+        </section>
+
+        <section className={styles.problemSection}>
+          <p className={styles.kicker}>Sound familiar?</p>
+          <div className={styles.splitSection}>
+            <h2 className={styles.sectionTitle}>
+              Your site should not be a dusty brochure.
+            </h2>
+            <div className={styles.problemCopy}>
+              <p>
+                If your website looks old, loads slow, hides your products, or
+                makes people call during business hours for basic information,
+                it is probably costing you customers.
+              </p>
+              <p>
+                We turn it into a practical sales asset: professional design,
+                clear offers, findable content, booking paths, product listings,
+                and a technical foundation built for the next wave of search.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="services" className={styles.section}>
+          <div className={styles.sectionHeader}>
+            <p className={styles.kicker}>What we build</p>
+            <h2 className={styles.sectionTitle}>
+              Websites that make the business look alive.
+            </h2>
+            <p className={styles.sectionIntro}>
+              We focus on the work that changes customer behavior: trust,
+              speed, discovery, conversion, and the ability to buy or book
+              without waiting for someone to answer the phone.
+            </p>
+          </div>
+
+          <div className={styles.capabilityGrid}>
+            {capabilities.map((capability) => (
+              <article key={capability.title} className={styles.capabilityCard}>
+                <p className={styles.cardEyebrow}>{capability.eyebrow}</p>
+                <h3>{capability.title}</h3>
+                <p>{capability.copy}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="process" className={styles.processSection}>
+          <div className={styles.sectionHeader}>
+            <p className={styles.kicker}>The process</p>
+            <h2 className={styles.sectionTitle}>Clear. Practical. Shipped.</h2>
+            <p className={styles.sectionIntro}>
+              No theater, no six-month mystery project. We find the business
+              goal, build the right web system, and launch with the basics
+              handled correctly.
+            </p>
+          </div>
+
+          <div className={styles.processGrid}>
+            {processSteps.map((step) => (
+              <article key={step.number} className={styles.processCard}>
+                <p className={styles.processNumber}>{step.number}</p>
+                <h3>{step.title}</h3>
+                <p>{step.copy}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className={styles.trustSection}>
+          <div className={styles.sectionHeader}>
+            <p className={styles.kicker}>Why clients trust the work</p>
+            <h2 className={styles.sectionTitle}>
+              Agency polish, senior-engineer discipline.
+            </h2>
+          </div>
+
+          <div className={styles.trustGrid}>
+            {trustSignals.map((signal) => (
+              <article key={signal.title} className={styles.trustCard}>
+                <h3>{signal.title}</h3>
+                <p>{signal.copy}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="proof" className={styles.section}>
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Client Results</h2>
             <p className={styles.sectionIntro}>
@@ -97,7 +341,7 @@ export default function HomePage() {
                 target="_blank"
                 rel="noreferrer"
                 className={styles.logoLink}
-                aria-label={`Visit ${testimonial.name} on LinkedIn`}
+                aria-label={`Visit ${testimonial.name} testimonial source on LinkedIn`}
               >
                 <Image
                   src={testimonial.logo}
@@ -129,24 +373,32 @@ export default function HomePage() {
               </div>
             </article>
           ))}
+        </section>
 
-          <p className={styles.outreach}>
-            Let&apos;s make your next release feel inevitable.
+        <section id="contact" className={styles.ctaSection}>
+          <p className={styles.kicker}>Book a call</p>
+          <h2 className={styles.ctaTitle}>
+            Let&apos;s turn your website into a better salesperson.
+          </h2>
+          <p className={styles.ctaCopy}>
+            Bring the current site, the business goal, and what you sell. We
+            will tell you where the biggest lift is likely hiding.
           </p>
           <p className={styles.cta}>
             <a
               href="https://dawsbot.com/#contact"
-              className={styles.highlight}
+              className={styles.primaryButton}
               target="_blank"
               rel="noreferrer"
             >
-              Click here for a free intro call
+              Book your free intro call
             </a>
           </p>
         </section>
 
         <footer className={styles.footer}>
-          Copyright {new Date().getFullYear()}
+          <span>Lost in the Sauce</span>
+          <span>Copyright {new Date().getFullYear()}</span>
         </footer>
       </div>
     </main>
